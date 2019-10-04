@@ -1,0 +1,37 @@
+Les passages importants du tutoriel traduit en français.
+
+#meteor: Le paquet static-html n'est pas spécifique à React. Il transforme simplement 
+les fragments <head> et <body> trouvés dans les fichiers.html en HTML brut 
+qui sera servi depuis le serveur web Meteor. Plus tard, votre application React
+rendra ses composants dans ce HTML.
+(Voir le fichier client/maint.html)
+
+#meteor: Note : dans les versions précédentes de Meteor, le répertoire d'importation 
+était spécial parce que les fichiers en dehors du répertoire d'importation 
+étaient chargés automatiquement au démarrage de l'application, alors que les 
+fichiers dans le répertoire d'importation n'étaient chargés que lorsqu'ils étaient
+importés avec une déclaration d'importation ou une instruction require. 
+Depuis Meteor 1.7, le point d'entrée pour JavaScript client et serveur est déterminé
+par la section meteor.mainModule du package.json. En d'autres termes, en ce qui
+concerne le code JavaScript, l'application entière se comporte maintenant comme si 
+elle se trouvait dans un répertoire d'importation, vous n'avez donc plus à vous soucier 
+autant du répertoire d'importation maintenant.
+
+#react #meteor: JSX est supporté par le paquet ecmascript Meteor, qui est inclus par défaut dans 
+toutes les nouvelles applications Meteor.
+
+#meteor #react #mongoDB: Pour utiliser les données d'une collection Meteor à l'intérieur d'un composant React, 
+nous pouvons utiliser un paquet Meteor appelé react-meteor-data, qui nous permet de créer 
+un "conteneur de données" pour alimenter la hiérarchie des composants de React avec 
+les données réactives de Meteor.
+
+#meteor #react: Pour utiliser react-meteor-data, nous devons envelopper notre composant dans un conteneur
+en utilisant le Higher Order Component: withTracker
+
+#js: L'opérateur !!test permet de tester si ma variable test contient quelque chose, 
+ou si elle est : null ou undefined ou chaine vide
+
+#js: La méthode bind crée une nouvelle fonction ayant le même contenu que la fonction liée, 
+mais en prédéfinissant la valeur de this. Exemple: this.handleSubmit.bind(this)
+sinon this correspond à l'objet global (window dans un navigateur).
+
